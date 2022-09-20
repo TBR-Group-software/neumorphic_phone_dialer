@@ -1,5 +1,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.tbr.phone_dialer.phone_dialer">
+   <queries>
+        <intent>
+          <action android:name="android.intent.action.VIEW" />
+          <data android:scheme="tel" />
+        </intent>
+   </queries>
+
    <application
         android:label="phone_dialer"
         android:name="${applicationName}"
