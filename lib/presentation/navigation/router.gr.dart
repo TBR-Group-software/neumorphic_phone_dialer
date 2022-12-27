@@ -24,15 +24,21 @@ class AppRouter extends _i3.RootStackRouter {
   @override
   final Map<String, _i3.PageFactory> pagesMap = {
     HomeRoute.name: (routeData) {
-      return _i3.MaterialPageX<void>(
+      return _i3.CustomPage<void>(
         routeData: routeData,
         child: const _i1.HomePage(),
+        transitionsBuilder: _i3.TransitionsBuilders.slideBottom,
+        opaque: true,
+        barrierDismissible: false,
       );
     },
     ContactsRoute.name: (routeData) {
-      return _i3.MaterialPageX<void>(
+      return _i3.CustomPage<void>(
         routeData: routeData,
         child: const _i2.ContactsPage(),
+        transitionsBuilder: _i3.TransitionsBuilders.slideBottom,
+        opaque: true,
+        barrierDismissible: false,
       );
     },
   };

@@ -24,7 +24,7 @@ mixin _$CallEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String phoneNumber)? makeCall,
+    TResult? Function(String phoneNumber)? makeCall,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -40,7 +40,7 @@ mixin _$CallEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_NakeCallEvent value)? makeCall,
+    TResult? Function(_NakeCallEvent value)? makeCall,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -58,28 +58,32 @@ mixin _$CallEvent {
 /// @nodoc
 abstract class $CallEventCopyWith<$Res> {
   factory $CallEventCopyWith(CallEvent value, $Res Function(CallEvent) then) =
-      _$CallEventCopyWithImpl<$Res>;
+      _$CallEventCopyWithImpl<$Res, CallEvent>;
+  @useResult
   $Res call({String phoneNumber});
 }
 
 /// @nodoc
-class _$CallEventCopyWithImpl<$Res> implements $CallEventCopyWith<$Res> {
+class _$CallEventCopyWithImpl<$Res, $Val extends CallEvent>
+    implements $CallEventCopyWith<$Res> {
   _$CallEventCopyWithImpl(this._value, this._then);
 
-  final CallEvent _value;
   // ignore: unused_field
-  final $Res Function(CallEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? phoneNumber = freezed,
+    Object? phoneNumber = null,
   }) {
     return _then(_value.copyWith(
-      phoneNumber: phoneNumber == freezed
+      phoneNumber: null == phoneNumber
           ? _value.phoneNumber
           : phoneNumber // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
@@ -90,25 +94,25 @@ abstract class _$$_NakeCallEventCopyWith<$Res>
           _$_NakeCallEvent value, $Res Function(_$_NakeCallEvent) then) =
       __$$_NakeCallEventCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String phoneNumber});
 }
 
 /// @nodoc
-class __$$_NakeCallEventCopyWithImpl<$Res> extends _$CallEventCopyWithImpl<$Res>
+class __$$_NakeCallEventCopyWithImpl<$Res>
+    extends _$CallEventCopyWithImpl<$Res, _$_NakeCallEvent>
     implements _$$_NakeCallEventCopyWith<$Res> {
   __$$_NakeCallEventCopyWithImpl(
       _$_NakeCallEvent _value, $Res Function(_$_NakeCallEvent) _then)
-      : super(_value, (v) => _then(v as _$_NakeCallEvent));
+      : super(_value, _then);
 
-  @override
-  _$_NakeCallEvent get _value => super._value as _$_NakeCallEvent;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? phoneNumber = freezed,
+    Object? phoneNumber = null,
   }) {
     return _then(_$_NakeCallEvent(
-      phoneNumber: phoneNumber == freezed
+      phoneNumber: null == phoneNumber
           ? _value.phoneNumber
           : phoneNumber // ignore: cast_nullable_to_non_nullable
               as String,
@@ -134,16 +138,16 @@ class _$_NakeCallEvent extends _NakeCallEvent {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_NakeCallEvent &&
-            const DeepCollectionEquality()
-                .equals(other.phoneNumber, phoneNumber));
+            (identical(other.phoneNumber, phoneNumber) ||
+                other.phoneNumber == phoneNumber));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(phoneNumber));
+  int get hashCode => Object.hash(runtimeType, phoneNumber);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_NakeCallEventCopyWith<_$_NakeCallEvent> get copyWith =>
       __$$_NakeCallEventCopyWithImpl<_$_NakeCallEvent>(this, _$identity);
 
@@ -158,7 +162,7 @@ class _$_NakeCallEvent extends _NakeCallEvent {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String phoneNumber)? makeCall,
+    TResult? Function(String phoneNumber)? makeCall,
   }) {
     return makeCall?.call(phoneNumber);
   }
@@ -186,7 +190,7 @@ class _$_NakeCallEvent extends _NakeCallEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_NakeCallEvent value)? makeCall,
+    TResult? Function(_NakeCallEvent value)? makeCall,
   }) {
     return makeCall?.call(this);
   }
@@ -230,30 +234,34 @@ mixin _$CallState {
 /// @nodoc
 abstract class $CallStateCopyWith<$Res> {
   factory $CallStateCopyWith(CallState value, $Res Function(CallState) then) =
-      _$CallStateCopyWithImpl<$Res>;
+      _$CallStateCopyWithImpl<$Res, CallState>;
+  @useResult
   $Res call({BlocStatus status, Object? error});
 }
 
 /// @nodoc
-class _$CallStateCopyWithImpl<$Res> implements $CallStateCopyWith<$Res> {
+class _$CallStateCopyWithImpl<$Res, $Val extends CallState>
+    implements $CallStateCopyWith<$Res> {
   _$CallStateCopyWithImpl(this._value, this._then);
 
-  final CallState _value;
   // ignore: unused_field
-  final $Res Function(CallState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? status = freezed,
+    Object? status = null,
     Object? error = freezed,
   }) {
     return _then(_value.copyWith(
-      status: status == freezed
+      status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as BlocStatus,
-      error: error == freezed ? _value.error : error,
-    ));
+      error: freezed == error ? _value.error : error,
+    ) as $Val);
   }
 }
 
@@ -263,30 +271,30 @@ abstract class _$$_CallStateCopyWith<$Res> implements $CallStateCopyWith<$Res> {
           _$_CallState value, $Res Function(_$_CallState) then) =
       __$$_CallStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({BlocStatus status, Object? error});
 }
 
 /// @nodoc
-class __$$_CallStateCopyWithImpl<$Res> extends _$CallStateCopyWithImpl<$Res>
+class __$$_CallStateCopyWithImpl<$Res>
+    extends _$CallStateCopyWithImpl<$Res, _$_CallState>
     implements _$$_CallStateCopyWith<$Res> {
   __$$_CallStateCopyWithImpl(
       _$_CallState _value, $Res Function(_$_CallState) _then)
-      : super(_value, (v) => _then(v as _$_CallState));
+      : super(_value, _then);
 
-  @override
-  _$_CallState get _value => super._value as _$_CallState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? status = freezed,
+    Object? status = null,
     Object? error = freezed,
   }) {
     return _then(_$_CallState(
-      status: status == freezed
+      status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as BlocStatus,
-      error: error == freezed ? _value.error : error,
+      error: freezed == error ? _value.error : error,
     ));
   }
 }
@@ -311,18 +319,17 @@ class _$_CallState implements _CallState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_CallState &&
-            const DeepCollectionEquality().equals(other.status, status) &&
+            (identical(other.status, status) || other.status == status) &&
             const DeepCollectionEquality().equals(other.error, error));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(status),
-      const DeepCollectionEquality().hash(error));
+      runtimeType, status, const DeepCollectionEquality().hash(error));
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_CallStateCopyWith<_$_CallState> get copyWith =>
       __$$_CallStateCopyWithImpl<_$_CallState>(this, _$identity);
 }

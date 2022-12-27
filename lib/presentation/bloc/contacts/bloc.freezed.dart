@@ -23,7 +23,7 @@ mixin _$ContactsEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? loadContacts,
+    TResult? Function()? loadContacts,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -39,7 +39,7 @@ mixin _$ContactsEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_LoadContactsEvent value)? loadContacts,
+    TResult? Function(_LoadContactsEvent value)? loadContacts,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -54,17 +54,18 @@ mixin _$ContactsEvent {
 abstract class $ContactsEventCopyWith<$Res> {
   factory $ContactsEventCopyWith(
           ContactsEvent value, $Res Function(ContactsEvent) then) =
-      _$ContactsEventCopyWithImpl<$Res>;
+      _$ContactsEventCopyWithImpl<$Res, ContactsEvent>;
 }
 
 /// @nodoc
-class _$ContactsEventCopyWithImpl<$Res>
+class _$ContactsEventCopyWithImpl<$Res, $Val extends ContactsEvent>
     implements $ContactsEventCopyWith<$Res> {
   _$ContactsEventCopyWithImpl(this._value, this._then);
 
-  final ContactsEvent _value;
   // ignore: unused_field
-  final $Res Function(ContactsEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -76,14 +77,11 @@ abstract class _$$_LoadContactsEventCopyWith<$Res> {
 
 /// @nodoc
 class __$$_LoadContactsEventCopyWithImpl<$Res>
-    extends _$ContactsEventCopyWithImpl<$Res>
+    extends _$ContactsEventCopyWithImpl<$Res, _$_LoadContactsEvent>
     implements _$$_LoadContactsEventCopyWith<$Res> {
   __$$_LoadContactsEventCopyWithImpl(
       _$_LoadContactsEvent _value, $Res Function(_$_LoadContactsEvent) _then)
-      : super(_value, (v) => _then(v as _$_LoadContactsEvent));
-
-  @override
-  _$_LoadContactsEvent get _value => super._value as _$_LoadContactsEvent;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -116,7 +114,7 @@ class _$_LoadContactsEvent implements _LoadContactsEvent {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? loadContacts,
+    TResult? Function()? loadContacts,
   }) {
     return loadContacts?.call();
   }
@@ -144,7 +142,7 @@ class _$_LoadContactsEvent implements _LoadContactsEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_LoadContactsEvent value)? loadContacts,
+    TResult? Function(_LoadContactsEvent value)? loadContacts,
   }) {
     return loadContacts?.call(this);
   }
@@ -180,31 +178,34 @@ mixin _$ContactsState {
 abstract class $ContactsStateCopyWith<$Res> {
   factory $ContactsStateCopyWith(
           ContactsState value, $Res Function(ContactsState) then) =
-      _$ContactsStateCopyWithImpl<$Res>;
+      _$ContactsStateCopyWithImpl<$Res, ContactsState>;
+  @useResult
   $Res call({BlocStatus status, Object? error});
 }
 
 /// @nodoc
-class _$ContactsStateCopyWithImpl<$Res>
+class _$ContactsStateCopyWithImpl<$Res, $Val extends ContactsState>
     implements $ContactsStateCopyWith<$Res> {
   _$ContactsStateCopyWithImpl(this._value, this._then);
 
-  final ContactsState _value;
   // ignore: unused_field
-  final $Res Function(ContactsState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? status = freezed,
+    Object? status = null,
     Object? error = freezed,
   }) {
     return _then(_value.copyWith(
-      status: status == freezed
+      status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as BlocStatus,
-      error: error == freezed ? _value.error : error,
-    ));
+      error: freezed == error ? _value.error : error,
+    ) as $Val);
   }
 }
 
@@ -215,31 +216,30 @@ abstract class _$$_ContactsStateCopyWith<$Res>
           _$_ContactsState value, $Res Function(_$_ContactsState) then) =
       __$$_ContactsStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({BlocStatus status, Object? error});
 }
 
 /// @nodoc
 class __$$_ContactsStateCopyWithImpl<$Res>
-    extends _$ContactsStateCopyWithImpl<$Res>
+    extends _$ContactsStateCopyWithImpl<$Res, _$_ContactsState>
     implements _$$_ContactsStateCopyWith<$Res> {
   __$$_ContactsStateCopyWithImpl(
       _$_ContactsState _value, $Res Function(_$_ContactsState) _then)
-      : super(_value, (v) => _then(v as _$_ContactsState));
+      : super(_value, _then);
 
-  @override
-  _$_ContactsState get _value => super._value as _$_ContactsState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? status = freezed,
+    Object? status = null,
     Object? error = freezed,
   }) {
     return _then(_$_ContactsState(
-      status: status == freezed
+      status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as BlocStatus,
-      error: error == freezed ? _value.error : error,
+      error: freezed == error ? _value.error : error,
     ));
   }
 }
@@ -264,18 +264,17 @@ class _$_ContactsState implements _ContactsState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ContactsState &&
-            const DeepCollectionEquality().equals(other.status, status) &&
+            (identical(other.status, status) || other.status == status) &&
             const DeepCollectionEquality().equals(other.error, error));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(status),
-      const DeepCollectionEquality().hash(error));
+      runtimeType, status, const DeepCollectionEquality().hash(error));
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_ContactsStateCopyWith<_$_ContactsState> get copyWith =>
       __$$_ContactsStateCopyWithImpl<_$_ContactsState>(this, _$identity);
 }

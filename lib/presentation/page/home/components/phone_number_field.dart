@@ -16,42 +16,13 @@ class AppPhoneNumberField extends StatefulWidget {
 }
 
 class _AppPhoneNumberFieldState extends State<AppPhoneNumberField> {
-  @override
-  void initState() {
-    super.initState();
-    widget.controller.addListener(() {
-      final String maskedText = _formatByMask(
-        widget.controller.text,
-        '(000) - 000 - 00 - 00',
-        null,
-      );
-      widget.controller.text =
-          maskedText.isNotEmpty ? maskedText : widget.controller.text;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return TextField(
-      enabled: false,
-      style: titleSmall(
-        color: AppTheme.of(context).colors.gray,
-      ),
-      textAlign: TextAlign.center,
-      decoration: InputDecoration(
-        border: InputBorder.none,
-      ),
-      controller: widget.controller,
-    );
-  }
-
   String _formatByMask(
-    String text,
-    String mask,
-    List<String>? altMasks, [
-    int altMaskIndex = 0,
-    bool allowEndlessPhone = false,
-  ]) {
+      String text,
+      String mask,
+      List<String>? altMasks, [
+        int altMaskIndex = 0,
+        bool allowEndlessPhone = false,
+      ]) {
     text = toNumericString(
       text,
       allowHyphen: false,
@@ -87,7 +58,7 @@ class _AppPhoneNumberFieldState extends State<AppPhoneNumberField> {
     ).replaceAll(',', '');
     if (actualDigitsInMask.length < text.length) {
       if (altMasks != null && altMaskIndex < altMasks.length) {
-        String formatResult = _formatByMask(
+        final String formatResult = _formatByMask(
           text,
           altMasks[altMaskIndex],
           altMasks,
@@ -107,5 +78,34 @@ class _AppPhoneNumberFieldState extends State<AppPhoneNumberField> {
 
     final String jointResult = result.join();
     return jointResult;
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    widget.controller.addListener(() {
+      final String maskedText = _formatByMask(
+        widget.controller.text,
+        '(000) - 000 - 00 - 00',
+        null,
+      );
+      widget.controller.text =
+          maskedText.isNotEmpty ? maskedText : widget.controller.text;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return TextField(
+      enabled: false,
+      style: titleSmall(
+        color: AppTheme.of(context).colors.gray,
+      ),
+      textAlign: TextAlign.center,
+      decoration: const InputDecoration(
+        border: InputBorder.none,
+      ),
+      controller: widget.controller,
+    );
   }
 }

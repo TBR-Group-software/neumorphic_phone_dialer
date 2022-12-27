@@ -5,12 +5,14 @@ import 'package:neumorphic_phone_dialer/presentation/page/home/page.dart';
 @MaterialAutoRouter(
   replaceInRouteName: 'Page,Route',
   routes: <AutoRoute>[
-    AutoRoute<void>(
+    CustomRoute<void>(
       page: HomePage,
       initial: true,
+      transitionsBuilder: TransitionsBuilders.slideBottom,
     ),
-    AutoRoute<void>(
+    CustomRoute<void>(
       page: ContactsPage,
+      transitionsBuilder: TransitionsBuilders.slideBottom,
     ),
   ],
 )
