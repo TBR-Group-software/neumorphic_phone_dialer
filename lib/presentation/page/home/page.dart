@@ -44,7 +44,9 @@ class _HomePageState extends State<HomePage> {
         appBar: ApplicationAppBar(
           leading: GestureDetector(
             onTap: () {
-              context.router.push(ContactsRoute());
+              context.router.push(
+                const ContactsRoute(),
+              );
             },
             child: SvgPicture.asset(
               AppImagePath.menu,

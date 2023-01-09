@@ -36,6 +36,9 @@ class _DialerAppState extends State<DialerApp> {
       title: 'Neumorphic Phone Dialer',
       routerDelegate: _router.delegate(),
       routeInformationParser: _router.defaultRouteParser(),
+      theme: ThemeData(
+        primarySwatch: Colors.grey,
+      ),
       builder: (BuildContext context, Widget? child) {
         return AppTheme(
           data: MediaQuery.of(context).platformBrightness == Brightness.dark

@@ -24,6 +24,7 @@ class AppColors with EquatableMixin {
       liteOrange,
       liteGray,
       gray,
+      dirtyGray,
       black,
       white,
       purple,
@@ -38,6 +39,7 @@ class AppColors with EquatableMixin {
     required this.darkOrange,
     required this.liteOrange,
     required this.liteGray,
+    required this.dirtyGray,
     required this.black,
     required this.white,
     required this.purple,
@@ -56,24 +58,27 @@ class AppColors with EquatableMixin {
         liteOrange,
         liteGray,
         gray,
+        dirtyGray,
         black,
         white,
         purple,
         litePurple,
         blue,
-        background
+        shadowDarkColor,
+        shadowLightColor,
       ];
 }
 
 class AppGradients with EquatableMixin {
   final RadialGradient secondary, innerBorder;
-  final LinearGradient main, outerBorder;
+  final LinearGradient main, outerBorder, contactBorder;
 
   const AppGradients({
     required this.main,
     required this.secondary,
     required this.innerBorder,
     required this.outerBorder,
+    required this.contactBorder,
   });
 
   @override
@@ -81,5 +86,7 @@ class AppGradients with EquatableMixin {
         main,
         secondary,
         innerBorder,
+        outerBorder,
+        contactBorder,
       ];
 }

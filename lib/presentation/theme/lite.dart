@@ -10,6 +10,7 @@ const AppThemeData liteTheme = AppThemeData(
     liteGray: Color(0xFFE8EEF2),
     gray: Color(0xFF68768A),
     black: Color(0xFF252525),
+    dirtyGray: Color(0xFFD6DBE3),
     white: Color(0xFFF5F5F5),
     purple: Color(0xFFAE22D6),
     litePurple: Color(0xFFC503FD),
@@ -43,6 +44,13 @@ const AppThemeData liteTheme = AppThemeData(
         Color(0xFFC6CEDA),
         Color(0xFFCAD1DD),
         Color(0xFFFEFEFF),
+      ],
+    ),
+    contactBorder: LinearGradient(
+      colors: <Color>[
+        Color(0xFFFEFEFF),
+        Color(0xFFCAD1DD),
+        Color(0xFFC6CEDA),
       ],
     ),
   ),

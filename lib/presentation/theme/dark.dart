@@ -9,6 +9,7 @@ const AppThemeData darkTheme = AppThemeData(
     liteOrange: Color(0xFFFD9704),
     liteGray: Color(0xFFEDF1F4),
     gray: Color(0xFF68768A),
+    dirtyGray: Color(0xFFD6DBE3),
     black: Color(0xFF252525),
     white: Color(0xFFF5F5F5),
     purple: Color(0xFFAE22D6),
@@ -43,6 +44,13 @@ const AppThemeData darkTheme = AppThemeData(
         Color(0xFFC6CEDA),
         Color(0xFFCAD1DD),
         Color(0xFFFEFEFF),
+      ],
+    ),
+    contactBorder: LinearGradient(
+      colors: <Color>[
+        Color(0xFFFEFEFF),
+        Color(0xFFCAD1DD),
+        Color(0xFFC6CEDA),
       ],
     ),
   ),
