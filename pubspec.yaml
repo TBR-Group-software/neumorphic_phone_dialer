@@ -21,7 +21,8 @@ dependencies:
   flutter_multi_formatter: 2.7.4
   contacts_service: 0.6.3
   cupertino_icons: ^1.0.2
-  string_to_color: 1.0.2
+  permission_handler: 10.2.0
+  string_to_hex: 0.2.2
   get_it: 7.2.0
 
 dev_dependencies:
