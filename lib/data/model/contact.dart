@@ -10,6 +10,6 @@ class ContactDto {
   });
 
   final String firstName, secondName, phoneNumber;
-  final Uint8List profileImage;
+  final Uint8List? profileImage;
   final int color;
 }

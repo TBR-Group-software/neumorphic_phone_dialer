@@ -11,6 +11,6 @@ class Contact {
   });
 
   final String firstName, secondName, phoneNumber;
-  final Uint8List profileImage;
+  final Uint8List? profileImage;
   final Color color;
 }
