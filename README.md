@@ -1,6 +1,15 @@
-# phone_dialer
+## About the project
+Phone dialer app with neumorphic, eye-pleasing design with support for dark theme.
+
+This project includes custom-made widgets using special package for building apps in neumorphic design.
 
 Neomorphic phone_dialer app.
+
+## Features
+- Soft, eye-pleasing design.
+- Calls.
+- Firebase sign in.
+- Contacts search.
 
 ## Getting Started
 
