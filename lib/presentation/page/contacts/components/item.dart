@@ -36,6 +36,9 @@ class ContactsItem extends StatelessWidget {
               Neumorphic(
                 padding: const EdgeInsets.all(10),
                 style: NeumorphicStyle(
+                  shadowLightColor:
+                      AppTheme.of(context).colors.shadowLightColor,
+                  shadowDarkColor: AppTheme.of(context).colors.shadowDarkColor,
                   color: AppTheme.of(context).colors.background,
                   depth: 10,
                   intensity: 10,
@@ -74,12 +77,20 @@ class ContactsItem extends StatelessWidget {
                       child: Text(
                         '${contact.firstName} ${contact.secondName}',
                         style: titleSmall(
-                          color: AppTheme.of(context).colors.black,
+                          color: AppTheme.of(context).colors.titleTextColor,
                         ),
                       ),
                     ),
+                    const SizedBox(
+                      height: 8,
+                    ),
                     Flexible(
-                      child: Text(contact.phoneNumber),
+                      child: Text(
+                        contact.phoneNumber,
+                        style: bodySemiBold(
+                          color: AppTheme.of(context).colors.bodyTextColor,
+                        ),
+                      ),
                     ),
                   ],
                 ),

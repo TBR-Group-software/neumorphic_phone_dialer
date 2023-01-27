@@ -24,7 +24,7 @@ class AppRoundCharButton extends StatelessWidget {
         child: NeumorphicButton(
           minDistance: -3,
           style: NeumorphicStyle(
-            color: AppTheme.of(context).colors.liteGray,
+            color: AppTheme.of(context).colors.buttonColor,
             shadowDarkColor: AppTheme.of(context).colors.shadowDarkColor,
             shadowLightColor: AppTheme.of(context).colors.shadowLightColor,
             depth: 100,
@@ -38,7 +38,7 @@ class AppRoundCharButton extends StatelessWidget {
             child: Text(
               char,
               style: titleMedium(
-                color: AppTheme.of(context).colors.black,
+                color: AppTheme.of(context).colors.bodyTextColor,
               ),
             ),
           ),

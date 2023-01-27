@@ -99,7 +99,7 @@ class _AppPhoneNumberFieldState extends State<AppPhoneNumberField> {
     return TextField(
       enabled: false,
       style: titleSmall(
-        color: AppTheme.of(context).colors.gray,
+        color: AppTheme.of(context).colors.bodyTextColor,
       ),
       textAlign: TextAlign.center,
       decoration: const InputDecoration(

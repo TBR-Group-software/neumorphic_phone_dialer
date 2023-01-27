@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:neumorphic_phone_dialer/backbone/dependency_injection.dart'
     as di;
@@ -6,7 +7,10 @@ import 'package:neumorphic_phone_dialer/presentation/theme/base.dart';
 import 'package:neumorphic_phone_dialer/presentation/theme/dark.dart';
 import 'package:neumorphic_phone_dialer/presentation/theme/lite.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+
   di.init();
 
   runApp(

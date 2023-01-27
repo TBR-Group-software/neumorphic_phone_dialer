@@ -34,8 +34,8 @@ class _ContactsPageState extends State<ContactsPage> {
       style: NeumorphicStyle(
         depth: -10,
         intensity: 1,
-        //shadowDarkColorEmboss: Colors.red,
-        shadowDarkColorEmboss: Color(0xff5a5e69),
+        shadowLightColorEmboss: AppTheme.of(context).colors.shadowLightColor,
+        shadowDarkColorEmboss: AppTheme.of(context).colors.shadowDarkColor,
         color: AppTheme.of(context).colors.background,
       ),
       child: Scaffold(

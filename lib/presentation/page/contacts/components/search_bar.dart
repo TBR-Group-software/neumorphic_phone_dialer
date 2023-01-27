@@ -33,6 +33,8 @@ class _ContactsSearchBarState extends State<ContactsSearchBar> {
         child: Neumorphic(
           style: NeumorphicStyle(
             color: AppTheme.of(context).colors.background,
+            shadowLightColor: AppTheme.of(context).colors.shadowLightColor,
+            shadowDarkColor: AppTheme.of(context).colors.shadowDarkColor,
             depth: 10,
             intensity: 10,
             boxShape: NeumorphicBoxShape.roundRect(
@@ -45,7 +47,7 @@ class _ContactsSearchBarState extends State<ContactsSearchBar> {
             decoration: BoxDecoration(
               border: Border.all(
                 width: 2,
-                color: AppTheme.of(context).colors.dirtyGray,
+                color: AppTheme.of(context).colors.searchBorderColor,
               ),
               borderRadius: BorderRadius.circular(63),
             ),
@@ -65,11 +67,11 @@ class _ContactsSearchBarState extends State<ContactsSearchBar> {
                       },
                       cursorColor: AppTheme.of(context).colors.gray,
                       style: bodySemiBold(
-                        color: AppTheme.of(context).colors.black,
+                        color: AppTheme.of(context).colors.titleTextColor,
                       ),
                       decoration: InputDecoration(
                         hintStyle: bodySemiBold(
-                          color: AppTheme.of(context).colors.gray,
+                          color: AppTheme.of(context).colors.bodyTextColor,
                         ),
                         hintText: 'Search contacts',
                         contentPadding: EdgeInsets.only(

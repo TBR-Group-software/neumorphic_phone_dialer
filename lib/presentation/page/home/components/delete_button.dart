@@ -25,9 +25,11 @@ class AppDialerDeleteButton extends StatelessWidget {
           bottom: 8,
         ),
         style: NeumorphicStyle(
-          color: AppTheme.of(context).colors.liteGray,
+          color: AppTheme.of(context).colors.buttonColor,
+          shadowLightColor: AppTheme.of(context).colors.shadowLightColor,
+          shadowDarkColor: AppTheme.of(context).colors.shadowDarkColor,
           border: NeumorphicBorder(
-            color: Color(0xFFcad4e2),
+            color: AppTheme.of(context).colors.shadowLightColor,
           ),
           boxShape: NeumorphicBoxShape.path(
             DeleteButtonShapeProvider(),
@@ -44,6 +46,7 @@ class AppDialerDeleteButton extends StatelessWidget {
         child: Center(
           child: Icon(
             Icons.close,
+            color: AppTheme.of(context).colors.bodyTextColor,
             size: 16,
           ),
         ),

@@ -39,3 +39,10 @@ TextStyle titleSmall({required Color color}) => TextStyle(
       fontWeight: FontWeight.w700,
       fontSize: 16,
     );
+
+TextStyle titleThin({required Color color}) => TextStyle(
+  color: color,
+  fontFamily: _quicksand,
+  fontWeight: FontWeight.w500,
+  fontSize: 16,
+);

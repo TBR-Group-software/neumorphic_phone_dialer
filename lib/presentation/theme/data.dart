@@ -22,6 +22,7 @@ class AppThemeData with EquatableMixin {
 class AppColors with EquatableMixin {
   final Color darkOrange,
       liteOrange,
+      orange,
       liteGray,
       gray,
       dirtyGray,
@@ -33,10 +34,17 @@ class AppColors with EquatableMixin {
       liteBlue,
       background,
       shadowDarkColor,
-      shadowLightColor;
+      shadowLightColor,
+      buttonColor,
+      borderColor,
+      titleTextColor,
+      bodyTextColor,
+      searchBorderColor,
+      coloredButtonContentColor;
 
   const AppColors({
     required this.darkOrange,
+    required this.orange,
     required this.liteOrange,
     required this.liteGray,
     required this.dirtyGray,
@@ -50,11 +58,18 @@ class AppColors with EquatableMixin {
     required this.gray,
     required this.shadowDarkColor,
     required this.shadowLightColor,
+    required this.buttonColor,
+    required this.borderColor,
+    required this.titleTextColor,
+    required this.bodyTextColor,
+    required this.searchBorderColor,
+    required this.coloredButtonContentColor,
   });
 
   @override
   List<Object?> get props => <Object>[
         darkOrange,
+        orange,
         liteOrange,
         liteGray,
         gray,
@@ -66,6 +81,12 @@ class AppColors with EquatableMixin {
         blue,
         shadowDarkColor,
         shadowLightColor,
+        buttonColor,
+        borderColor,
+        titleTextColor,
+        bodyTextColor,
+        searchBorderColor,
+        coloredButtonContentColor,
       ];
 }
 

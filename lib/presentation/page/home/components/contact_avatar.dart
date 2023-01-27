@@ -3,13 +3,13 @@ import 'package:neumorphic_phone_dialer/presentation/theme/base.dart';
 
 class AppContactAvatar extends StatelessWidget {
   const AppContactAvatar({
-    required this.imageUrl,
+    required this.assetPath,
     this.enableBorder = false,
     Key? key,
   }) : super(key: key);
 
   final bool enableBorder;
-  final String imageUrl;
+  final String assetPath;
 
   @override
   Widget build(BuildContext context) {
@@ -17,8 +17,10 @@ class AppContactAvatar extends StatelessWidget {
       padding: const EdgeInsets.all(17),
       style: NeumorphicStyle(
         shape: NeumorphicShape.concave,
-        color: AppTheme.of(context).colors.liteGray,
-        depth: -100,
+        shadowLightColorEmboss: AppTheme.of(context).colors.shadowLightColor,
+        shadowDarkColorEmboss: AppTheme.of(context).colors.shadowDarkColor,
+        color: AppTheme.of(context).colors.borderColor,
+        depth: -10,
         boxShape: const NeumorphicBoxShape.circle(),
       ),
       child: enableBorder
@@ -26,6 +28,8 @@ class AppContactAvatar extends StatelessWidget {
         padding: const EdgeInsets.all(12),
               style: NeumorphicStyle(
                 shape: NeumorphicShape.concave,
+                shadowLightColor: AppTheme.of(context).colors.shadowLightColor,
+                shadowDarkColor: AppTheme.of(context).colors.shadowDarkColor,
                 color: AppTheme.of(context).colors.darkOrange,
                 depth: -100,
                 boxShape: const NeumorphicBoxShape.circle(),
@@ -37,8 +41,8 @@ class AppContactAvatar extends StatelessWidget {
   }
 
   Widget _buildImage() => ClipOval(
-        child: Image.network(
-          imageUrl,
+        child: Image.asset(
+          assetPath,
           fit: BoxFit.cover,
         ),
       );

@@ -1,8 +1,11 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:neumorphic_phone_dialer/backbone/dependency_injection.dart'
     as di;
+import 'package:neumorphic_phone_dialer/presentation/bloc/auth/bloc.dart';
+import 'package:neumorphic_phone_dialer/presentation/bloc/base.dart';
 import 'package:neumorphic_phone_dialer/presentation/bloc/call/bloc.dart';
 import 'package:neumorphic_phone_dialer/presentation/navigation/router.gr.dart';
 import 'package:neumorphic_phone_dialer/presentation/page/home/components/contact_avatar.dart';
@@ -10,6 +13,7 @@ import 'package:neumorphic_phone_dialer/presentation/page/home/components/dialer
 import 'package:neumorphic_phone_dialer/presentation/page/home/components/phone_number_field.dart';
 import 'package:neumorphic_phone_dialer/presentation/theme/base.dart';
 import 'package:neumorphic_phone_dialer/presentation/theme/image_path.dart';
+import 'package:neumorphic_phone_dialer/presentation/theme/text_styles.dart';
 import 'package:neumorphic_phone_dialer/presentation/widget/appbar.dart';
 
 class HomePage extends StatefulWidget {
@@ -22,12 +26,17 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   late final TextEditingController _controller;
   late final CallBloc _callBloc;
+  late final AuthBloc _authBloc;
 
   @override
   void initState() {
     super.initState();
     _callBloc = di.sl.get();
     _controller = TextEditingController();
+    _authBloc = di.sl.get()
+      ..add(
+        const AuthEvent.getCurrentUser(),
+      );
   }
 
   @override
@@ -36,12 +45,13 @@ class _HomePageState extends State<HomePage> {
       style: NeumorphicStyle(
         depth: -10,
         intensity: 1,
-        //shadowDarkColorEmboss: Colors.red,
-        shadowDarkColorEmboss: Color(0xff5a5e69),
+        shadowLightColorEmboss: AppTheme.of(context).colors.shadowLightColor,
+        shadowDarkColorEmboss: AppTheme.of(context).colors.shadowDarkColor,
         color: AppTheme.of(context).colors.background,
       ),
       child: Scaffold(
         appBar: ApplicationAppBar(
+          rightPadding: 25,
           leading: GestureDetector(
             onTap: () {
               context.router.push(
@@ -51,6 +61,38 @@ class _HomePageState extends State<HomePage> {
             child: SvgPicture.asset(
               AppImagePath.menu,
             ),
+          ),
+          ending: BlocBuilder<AuthBloc, AuthState>(
+            bloc: _authBloc,
+            builder: (BuildContext context, AuthState state) {
+              return GestureDetector(
+                onTap: () {
+                  if (state.status == BlocStatus.loaded && state.user == null) {
+                    context.router.push(
+                      const AuthRoute(),
+                    );
+                  }
+                },
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    SvgPicture.asset(
+                      AppImagePath.user,
+                      color: AppTheme.of(context).colors.darkOrange,
+                    ),
+                    const SizedBox(
+                      width: 8,
+                    ),
+                    Text(
+                      'Account',
+                      style: titleSmall(
+                        color: AppTheme.of(context).colors.titleTextColor,
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            },
           ),
         ),
         backgroundColor: Colors.transparent,
@@ -62,8 +104,7 @@ class _HomePageState extends State<HomePage> {
               height: 168,
               child: AppContactAvatar(
                 enableBorder: true,
-                imageUrl:
-                    'https://static.remove.bg/remove-bg-web/c4b29bf4b97131238fda6316e24c9b3606c18000/assets/start-1abfb4fe2980eabfbbaaa4365a0692539f7cd2725f324f904565a9a744f8e214.jpg',
+                assetPath: AppImagePath.exampleUserPicture,
               ),
             ),
             AppPhoneNumberField(

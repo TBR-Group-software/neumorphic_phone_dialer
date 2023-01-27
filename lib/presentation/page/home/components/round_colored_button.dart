@@ -23,7 +23,7 @@ class RoundColoredButton extends StatelessWidget {
           minDistance: -3,
           padding: const EdgeInsets.all(7),
           style: NeumorphicStyle(
-            color: AppTheme.of(context).colors.liteGray,
+            color: AppTheme.of(context).colors.buttonColor,
             shadowDarkColor: AppTheme.of(context).colors.shadowDarkColor,
             shadowLightColor: AppTheme.of(context).colors.shadowLightColor,
             depth: 100,
@@ -35,14 +35,22 @@ class RoundColoredButton extends StatelessWidget {
             child: Neumorphic(
               style: NeumorphicStyle(
                 shape: NeumorphicShape.concave,
+                color: AppTheme.of(context).colors.buttonColor,
+                shadowDarkColor: AppTheme.of(context).colors.shadowDarkColor,
+                shadowLightColor: AppTheme.of(context).colors.shadowLightColor,
                 border: NeumorphicBorder(
-                    width: 1, color: AppTheme.of(context).colors.white),
+                  width: 1,
+                  color: AppTheme.of(context).colors.borderColor,
+                ),
                 //color: AppTheme.of(context).colors.darkOrange,
                 boxShape: const NeumorphicBoxShape.circle(),
               ),
               child: Neumorphic(
                 margin: const EdgeInsets.all(8.0),
                 style: NeumorphicStyle(
+                  shadowDarkColor: AppTheme.of(context).colors.shadowDarkColor,
+                  shadowLightColor:
+                      AppTheme.of(context).colors.shadowLightColor,
                   border: NeumorphicBorder(
                     width: 2,
                     color: AppTheme.of(context).colors.liteOrange,
