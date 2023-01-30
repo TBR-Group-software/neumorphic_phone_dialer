@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "73004250246",
+    "project_id": "neumorphic-phone-dialer-demo",
+    "storage_bucket": "neumorphic-phone-dialer-demo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:73004250246:android:cfaaa32137e901bc670d07",
+        "android_client_info": {
+          "package_name": "com.tbr.phone_dialer.phone_dialer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "73004250246-eqo8k28fs5pricmbpk334gk7t5cgk6ma.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBi9bZOAyQJMLNG5XsV-plBEo7DVjUtTEg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "73004250246-eqo8k28fs5pricmbpk334gk7t5cgk6ma.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "73004250246-9mjj2u4akmu7gsc9q3qi60fh9bhvuen7.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.tbr.phonedialer.phoneDialer"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

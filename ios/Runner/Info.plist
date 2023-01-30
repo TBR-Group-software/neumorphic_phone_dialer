@@ -45,5 +45,13 @@
 	<false/>
 	<key>CADisableMinimumFrameDurationOnPhone</key>
 	<true/>
+	<key>LSApplicationQueriesSchemes</key>
+  <array>
+    <string>tel</string>
+  </array>
+	<key>UIApplicationSupportsIndirectInputEvents</key>
+	<true/>
+	<key>NSContactsUsageDescription</key>
+    <string>This app requires contacts access to display contacts.</string>
 </dict>
 </plist>
