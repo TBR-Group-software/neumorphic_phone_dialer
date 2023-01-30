@@ -5,7 +5,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:neumorphic_phone_dialer/backbone/dependency_injection.dart'
     as di;
 import 'package:neumorphic_phone_dialer/presentation/bloc/auth/bloc.dart';
-import 'package:neumorphic_phone_dialer/presentation/bloc/base.dart';
 import 'package:neumorphic_phone_dialer/presentation/bloc/call/bloc.dart';
 import 'package:neumorphic_phone_dialer/presentation/navigation/router.gr.dart';
 import 'package:neumorphic_phone_dialer/presentation/page/home/components/contact_avatar.dart';
@@ -67,7 +66,7 @@ class _HomePageState extends State<HomePage> {
             builder: (BuildContext context, AuthState state) {
               return GestureDetector(
                 onTap: () {
-                  if (state.status == BlocStatus.loaded && state.user == null) {
+                  if (state.user == null) {
                     context.router.push(
                       const AuthRoute(),
                     );

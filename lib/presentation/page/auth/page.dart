@@ -1,5 +1,4 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:flutter_svg/svg.dart';
@@ -76,7 +75,13 @@ class _AuthPageState extends State<AuthPage> {
             ),
             SafeArea(
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 32),
+                padding: EdgeInsets.only(
+                  left: 32,
+                  right: 32,
+                  bottom: MediaQuery.of(context).padding.bottom == 0
+                      ? 20
+                      : MediaQuery.of(context).padding.bottom,
+                ),
                 child: BlocConsumer<AuthBloc, AuthState>(
                   bloc: _authBloc,
                   listener: (BuildContext context, AuthState state) {
