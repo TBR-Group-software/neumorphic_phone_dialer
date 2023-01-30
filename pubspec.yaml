@@ -33,10 +33,23 @@ dev_dependencies:
     sdk: flutter
 
   auto_route_generator: ^5.0.2
+  flutter_launcher_icons: ^0.11.0
   build_runner: ^2.2.1
   ferry_generator: ^0.6.0
   freezed: ^2.1.0+1
   flutter_lints: ^2.0.0
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icons/app_icon.png"
+  min_sdk_android: 21
+  web:
+    generate: false
+  windows:
+    generate: false
+  macos:
+    generate: false
 
 flutter:
   uses-material-design: true

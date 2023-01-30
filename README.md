@@ -7,9 +7,60 @@ Neomorphic phone_dialer app.
 
 ## Features
 - Soft, eye-pleasing design.
+- Dark theme.
 - Calls.
 - Firebase sign in.
 - Contacts search.
+
+## Call button
+```dart
+NeumorphicButton(
+      minDistance: -3,
+      padding: const EdgeInsets.all(7),
+      style: NeumorphicStyle(
+        color: AppTheme.of(context).colors.buttonColor,
+        shadowDarkColor: AppTheme.of(context).colors.shadowDarkColor,
+        shadowLightColor: AppTheme.of(context).colors.shadowLightColor,
+        depth: 100,
+        intensity: 10,
+        boxShape: const NeumorphicBoxShape.circle(),
+      ),
+      onPressed: onTap,
+      child: Center(
+        child: Neumorphic(
+          style: NeumorphicStyle(
+            shape: NeumorphicShape.concave,
+            color: AppTheme.of(context).colors.buttonColor,
+            shadowDarkColor: AppTheme.of(context).colors.shadowDarkColor,
+            shadowLightColor: AppTheme.of(context).colors.shadowLightColor,
+            border: NeumorphicBorder(
+              width: 1,
+              color: AppTheme.of(context).colors.borderColor,
+            ),
+            boxShape: const NeumorphicBoxShape.circle(),
+          ),
+          child: Neumorphic(
+            margin: const EdgeInsets.all(8.0),
+            style: NeumorphicStyle(
+              shadowDarkColor: AppTheme.of(context).colors.shadowDarkColor,
+              shadowLightColor: AppTheme.of(context).colors.shadowLightColor,
+              border: NeumorphicBorder(
+                width: 2,
+                color: AppTheme.of(context).colors.liteOrange,
+              ),
+              shape: NeumorphicShape.concave,
+              surfaceIntensity: 0.5,
+              color: AppTheme.of(context).colors.darkOrange,
+              boxShape: const NeumorphicBoxShape.circle(),
+            ),
+            child: Center(
+              child: child,
+            ),
+          ),
+        ),
+      ),
+    );
+```
 
 ## Getting Started
 
