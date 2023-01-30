@@ -8,10 +8,10 @@ Phone dialer app with neumorphic, eye-pleasing design with support for dark them
 This project includes custom-made widgets using special package for building apps in neumorphic design.
 
 <p float="center", align="justify ">
-  <img src="https://user-images.githubusercontent.com/80672702/215415407-1ea8e1b5-3b38-4395-b759-618bc00e6cc6.gif" width="200" />
-  <img src="https://user-images.githubusercontent.com/80672702/215418726-80c066b2-0f84-4469-baa7-1efe10a6599c.gif" width="200" />
-  <img src="https://user-images.githubusercontent.com/80672702/215419868-8a7c2c75-08b0-4b3d-b6f7-924d981e77ac.gif" width="200" />
-  <img src="https://user-images.githubusercontent.com/80672702/215421834-efcad6bf-03ac-440c-873b-838c2fbe6de9.gif" width="200" />
+  <img src="https://user-images.githubusercontent.com/80672702/215427637-f08ecfcd-6ac9-458a-8aef-7cbe9ff64f0d.gif" width="200" />
+  <img src="https://user-images.githubusercontent.com/80672702/215428558-a8dcfb74-b807-499a-9fac-789798d141a9.gif" width="200" />
+  <img src="https://user-images.githubusercontent.com/80672702/215428692-1b189971-72a7-4033-82ce-bcb4840c0e20.gif" width="200" />
+  <img src="https://user-images.githubusercontent.com/80672702/215428775-532b5e05-01e0-492d-b6a2-ad17a6b7b1aa.gif" width="200" />
 </p>
 
 ## Features
